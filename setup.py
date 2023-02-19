@@ -23,7 +23,8 @@ setup(
 	'pypandoc>=1.4',
 	'pytest>=4.3.1',
         'pytest-runner>=4.4',
-    ]
+	'click>=7.0'
+    ],
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
     # Substitute <github_account> with the name of your GitHub account
@@ -32,4 +33,8 @@ setup(
     author_email='m.shayganfar@gmail.com',
     license='MIT',
     packages=['titanic'],
+    entry_points='''
+        [console_scripts]
+        titanic_analysis=titanic.command_line:titanic_analysis
+    '''
 )
